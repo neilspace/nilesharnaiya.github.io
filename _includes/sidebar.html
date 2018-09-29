@@ -1,0 +1,57 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Check out my works below:</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
+
+    {% assign pages_list = site.pages | sort:"url" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    <a class="sidebar-nav-item" href="https://drive.google.com/file/d/14_WWKnn07p_1ehy4H3PWUw435q3PwuTD/view?usp=sharing">Resume</a>
+    <a class="sidebar-nav-item" href="{{site.baseurl}}/blog">Blog</a>
+    <a class="sidebar-nav-item" href="{{site.baseurl}}/notes">Notes</a>
+    <a class="sidebar-nav-item" href="{{site.baseurl}}/blockchain_textbook.pdf">Blockchain Book</a>
+
+  </nav>
+
+  <div class="sidebar-item">
+
+    <h4 style="color: white">Contact</h4>
+    Email: <a href="mailto:rustielin@berkeley.edumailto:rustielin@berkeley.edu">rustielin@berkeley.edu</a> <br>
+    Phone: (510) 676-0295 <br> <br>
+
+    GitHub: <a href="https://github.com/rustielin">rustielin</a> <br>
+    LinkedIn: <a href="https://www.linkedin.com/in/rustielin/">rustielin</a> <br>
+
+  </div>
+
+  <div class="sidebar-item">
+
+
+    <p>v{{ site.version }}, powered by Jekyll</p>
+
+    <p>
+      &copy; {{ site.time | date: '%Y' }}. Rustie Lin.
+    </p>
+  </div>
+
+
+</div>

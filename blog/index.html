@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<p class="message">
+  "To think - to really think - you have to write. Chances are, you're fooling yourself; you're only pretending to think. If you're thinking about writing you only think you're thinking" - Leslie Lamport </br>
+</p>
+
+
+
+<div class="posts">
+  {% for post in paginator.posts %}
+
+  <article class="post">
+
+    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <i> {{ post.date | date_to_string }}</i>
+    <div class="entry">
+      {{ post.headline | truncatewords:40}}
+    </div>
+
+  </article>
+
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+  <a class="pagination-item older" href="{{ site.baseurl }}/blog/page{{paginator.next_page}}">Older</a>
+  {% else %}
+  <span class="pagination-item older">Older</span>
+  {% endif %}
+
+  {% if paginator.previous_page %}
+
+        {% if paginator.page == 2 %}
+        <a class="pagination-item newer" href="{{ site.baseurl }}/blog">Newer</a>
+        {% else %}
+        <a class="pagination-item newer" href="{{ site.baseurl }}/blog/page{{paginator.previous_page}}">Newer</a>
+        {% endif %}
+  {% else %}
+  <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
