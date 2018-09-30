@@ -1,4 +1,3 @@
-# nilesharnaiya.github.io
 # Personal Resume/Portfolio/Blogging Website
 
 Hello!
