@@ -21,6 +21,10 @@ a:hover {
   color: #6633ff;
 }
 
+.flex2{
+  display: inline-flex;
+}
+
 /* Section Styles */
 
 .main-nav {
@@ -109,6 +113,7 @@ header .profile-image:hover {
 .location {
   background-color: #222;
   color: yellow;
+  font-size: x-large;
 }
 .card {
   margin: 30px;
@@ -116,7 +121,7 @@ header .profile-image:hover {
   max-width: 500px;
   text-align: left;
   background: #fff;
-  border-bottom: 4px solid #ccc;
+  border-bottom: 14px solid #776161;
   border-radius: 6px;
   transition: all .5s;
 }
@@ -205,6 +210,15 @@ a.social:hover {
       justify-content: space-around;
       margin: 0 auto;
   }
+
+.flex2{
+      display: inline-flex;
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      max-width: 1200px;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      margin: 0 auto;
+      }
 
   header {
     min-height: 470px;
